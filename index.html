@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>To-do</title>
+</head>
+<body>
+  <div id="container">
+    <header class="page-top">
+      <img src="./img/book.png" alt="logo" class="page-top__img">
+      <span>To-do</span>
+      <div class="page-top__options">
+        <span class="page-top__options-addBlock">Adicionar nota</span>
+        <input type="text">
+      </div>
+    </header>
+    <main class="page-mid">
+      <ul class="page-mid__cards">
+        <span class="page-mid__cards-msg">Não há nenhum card :c</span>
+      </ul>
+    </main>
+    <footer class="page-bot">
+      <h1>Desenvolvido por mim</h1>
+    </footer>
+    <div class="modal">
+      <div class="modal-box">
+        <form class="formModal">
+          <label>Title:</label>
+          <input type="text" class="formModal-title">
+          <label>Text:</label>
+          <textarea type="text" class="formModal-text"></textarea>
+        </form>
+        <div class="formModal-buttons">
+          <button class="confirmModal">Criar</button>
+          <button class="confirmModal">Sair</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./script.js">
+  </script>
+</body>
+</html>
