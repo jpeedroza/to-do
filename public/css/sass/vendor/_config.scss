@@ -1,0 +1,11 @@
+#container{
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: 150px auto 80px;
+  min-height: 100vh;
+  grid-template-areas: 
+  "header header header header header header"
+  "main main main main main main"
+  "footer footer footer footer footer footer";
+  font-family: roboto;
+}

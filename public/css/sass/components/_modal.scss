@@ -1,0 +1,48 @@
+@import '../abstracts/global';
+
+.modal{
+  @include areas(100vw, 100vh, true);
+  @extend %centeredItens;
+  background-color: rgba($color: $black, $alpha: 0.5);
+  position: fixed;
+  visibility: hidden;
+
+  &__box{
+    @include areas(500px, 400px, true);
+    @extend %centeredItens;
+    flex-direction: column;
+    background-color: $white;
+
+    &__form{
+      @extend %centeredItens;
+      flex-direction: column;
+      padding-bottom: 20px;
+
+      &-label{
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      &-title, 
+      &-text{
+        @include areas(200px, 25px, true);
+        margin: 5px;
+      }
+
+      &-text{
+        height: 200px;
+        padding: 5px;
+        resize: none;
+      }
+    }
+
+    &__buttons{
+
+      &-create, 
+      &-close{
+        @include areas(80px, 25px, true);
+        @extend %buttonsModal;
+      }
+    }
+  }
+}
