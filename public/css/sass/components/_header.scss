@@ -1,0 +1,49 @@
+@import '../abstracts/global';
+
+.header{
+  @include base($mainColor, header, flex, true);
+  @extend %centeredItens;
+  padding: 0 50px;
+
+  &__img{
+    @include areas(100px, 0);
+    margin-right: 20px;
+  }
+  
+  &__title{
+    color: $white;
+  }
+
+  &__options{
+    @include areas(300px, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: auto;
+
+    &-addBlock, 
+    &-search{
+      @extend %mainPageButton;
+    }
+
+    &-addBlock{
+      color: $black;
+      transition: 500ms color, 500ms background;
+
+      &:hover{
+        color: $white;
+        background-color: $mainColor;
+      }
+    }
+    
+    &-search{
+      outline: none;
+      transition: 500ms border;
+
+      &:focus{
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+
+}

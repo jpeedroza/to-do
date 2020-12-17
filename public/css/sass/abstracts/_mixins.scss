@@ -1,0 +1,62 @@
+@import './variables';
+
+@mixin base($backgroundColor, $gridArea, $display, $containDisplay: false){
+  background-color: $backgroundColor;
+  grid-area: $gridArea;
+  @if $containDisplay{
+    display: $display;
+  }
+}
+
+@mixin areas($width, $height, $containHeight: false){
+  width: $width;
+
+  @if $containHeight {
+    height: $height;
+  }
+}
+
+%centeredItens{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%mainPageButton{
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+%centeredTextCard{
+  word-wrap: break-word;
+  text-align: center;
+}
+
+%buttonsCard{
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: $lightMainColor;
+  transition: 200ms color;
+  position: relative;
+  top: -10px; 
+  
+  &:hover{
+    color: white;
+  }
+}
+
+%buttonsModal{
+  background-color: $black;
+  border: none;
+  color: $white;
+  transition: 500ms background, 500ms color;
+
+  &:hover{
+    background-color: $white;
+    border: 2px solid $black;
+    color: $black;
+  }
+}
