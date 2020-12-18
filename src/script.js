@@ -1,12 +1,11 @@
 const modalBox = document.querySelector('.modal');
-const openModal = document.querySelector('.page-top__options-addBlock')
-const inputContentTitle = document.querySelector('.formModal-title');
-const inputContentText = document.querySelector('.formModal-text');
-const modalButtonCreateCard = document.querySelector('.confirmModal');
-const modalButtonClose = document.querySelectorAll('.confirmModal')[1];
-const editModal = document.querySelector('.cards-top__options-edit');
-const sectionCards = document.querySelector('.page-mid__cards');
-const msgNoneCards = document.querySelector('.page-mid__cards-msg');
+const openModal = document.querySelector('.header__options-addBlock')
+const inputContentTitle = document.querySelector('.modal__box__form-title');
+const inputContentText = document.querySelector('.modal__box__form-text');
+const modalButtonCreateCard = document.querySelector('.modal__box__buttons-create');
+const modalButtonClose = document.querySelector('.modal__box__buttons-close');
+const sectionCards = document.querySelector('.main__cards');
+const msgNoneCards = document.querySelector('.main__cards-msg');
 
 
 modalBox.onclick = (e) => { if(e.target === modalBox) modalContent('hidden') };
@@ -29,10 +28,10 @@ function addCard() {
 
 function listenClick(e){
 
-  if(e.target.classList.contains('cards-top__options-edit')){
+  if(e.target.classList.contains('card__edit')){
     editCard(e)
   }
-  if(e.target.classList.contains('cards-top__options-delete')){
+  if(e.target.classList.contains('card__delete')){
     if(confirm('Deseja mesmo deletar o card ?')){
       e.target.parentNode.remove()
     }
@@ -48,22 +47,19 @@ function listenClick(e){
 function createCard(){
 
   const card = document.createElement('li');
-  card.className = 'cards';
+  card.className = 'card';
 
   const delButton = document.createElement('span');
   delButton.textContent = 'X';
-  delButton.className = 'cards-top__options-delete';
+  delButton.className = 'card__delete';
 
   const editButton = document.createElement('span');
   editButton.textContent = 'Edit';
-  editButton.className = 'cards-top__options-edit';
+  editButton.className = 'card__edit';
   
   card.innerHTML = `
-    <div class="cards-top">
-      <h1 class="cards-top__title">${inputContentTitle.value}</h1>
-    <div class="cards-mid">
-      <p class="cards-text">${inputContentText.value}</p>
-    </div>
+      <h1 class="card__title">${inputContentTitle.value}</h1>
+      <p class="card__text">${inputContentText.value}</p>
   `;
 
   sectionCards.appendChild(card);

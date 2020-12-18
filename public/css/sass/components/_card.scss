@@ -1,0 +1,31 @@
+@import '../abstracts/global';
+
+.card{
+  @include areas(300px, 0);
+  list-style-type: none;
+  border: 1px solid $black;
+  margin: 20px;
+
+
+    &__title, 
+    &__text{
+      @extend %centeredTextCard;
+    }
+
+    &__title{
+      @include areas(280px, 0);
+      margin: 10px 5px;
+    }
+
+    &__text{
+      @include areas(290px, 0);
+      margin: 20px 5px 30px;
+    }
+
+    &__delete, 
+    &__edit{
+      @extend %buttonsCard;
+      margin: 5px;
+    }
+    
+}

@@ -1,0 +1,10 @@
+@import '../abstracts/global';
+
+.footer{
+  @include base($mainColor, footer, flex, true);
+  @extend %centeredItens;
+
+  &__text{
+    color: black;
+  }
+}
