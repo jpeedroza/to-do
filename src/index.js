@@ -1,3 +1,6 @@
+import '../public/css/sass/style.scss';
+import book from '../public/img/book.png';
+
 const modalBox = document.querySelector('.modal');
 const openModal = document.querySelector('.header__options-addBlock')
 const inputContentTitle = document.querySelector('.modal__box__form-title');
@@ -7,12 +10,11 @@ const modalButtonClose = document.querySelector('.modal__box__buttons-close');
 const sectionCards = document.querySelector('.main__cards');
 const msgNoneCards = document.querySelector('.main__cards-msg');
 
-
-modalBox.onclick = (e) => { if(e.target === modalBox) modalContent('hidden') };
 openModal.onclick = () => modalContent('initial');
 modalButtonCreateCard.onclick = () => addCard();
 modalButtonClose.onclick = () => modalContent('hidden');
 sectionCards.onclick = e => listenClick(e);
+
 
 function addCard() {
 
@@ -38,10 +40,10 @@ function listenClick(e){
   }
 }
 
-/* 
-  function editCard(e){
+/*
+function editCard(e){
 
-  }
+}
 */
 
 function createCard(){
@@ -56,10 +58,10 @@ function createCard(){
   const editButton = document.createElement('span');
   editButton.textContent = 'Edit';
   editButton.className = 'card__edit';
-  
+
   card.innerHTML = `
-      <h1 class="card__title">${inputContentTitle.value}</h1>
-      <p class="card__text">${inputContentText.value}</p>
+  <h1 class="card__title">${inputContentTitle.value}</h1>
+  <p class="card__text">${inputContentText.value}</p>
   `;
 
   sectionCards.appendChild(card);
@@ -75,8 +77,14 @@ function modalContent(p){
 }
 
 function hideCardEmpty(){
-  
+
   if(!sectionCards.childElementCount == 0){
     msgNoneCards.style.display = 'none';
   }
 }
+
+modalBox.onclick = (e) => {
+  if (e.target === modalBox) {
+    modalContent('hidden');
+  }
+};
