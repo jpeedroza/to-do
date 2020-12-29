@@ -1,7 +1,7 @@
 'use strict';
 
-import '../public/css/sass/style.scss';
-import book from '../public/img/book.png';
+// import '../public/css/sass/style.scss';
+// import book from '../public/img/book.png';
 
 class HeaderCommands {
   modalContent(param){
