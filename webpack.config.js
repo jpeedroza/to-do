@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: path.join(__dirname, '/src/', 'script.js'),
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -12,7 +12,7 @@ module.exports = {
 
   plugins:[
     new webpack.ProgressPlugin(),
-    new HtmlWebpackPlugin({template: './src/index.html'})
+    new HtmlWebpackPlugin({template: path.join(__dirname, '/src/', 'index.html')})
   ],
 
   module: {
@@ -29,7 +29,7 @@ module.exports = {
       // HTML loader
       {
         test: /\.html$/,
-        exclude: [/node_modules/, require.resolve('./src/index.html')],
+        exclude: [/node_modules/, path.resolve('./src/index.html')],
         use: { loader: 'html-loader' }
       },
       // IMG loader

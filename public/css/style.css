@@ -240,6 +240,8 @@ table {
 }
 .card__title {
   width: 280px;
+  font-weight: 500;
+  font-size: 26px;
   margin: 10px 5px;
 }
 .card__text {

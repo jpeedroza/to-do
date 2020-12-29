@@ -1,7 +1,6 @@
 {
-  "name": "toDoing",
+  "name": "to-do",
   "version": "1.0.0",
-  "description": "",
   "private": "true",
   "scripts": {
     "start": "webpack serve --hot --compress --mode development",
@@ -12,13 +11,14 @@
     "url": "git+https://github.com/jpeedroza/to-do.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "João Pedro Pedroza",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jpeedroza/to-do/issues"
   },
   "homepage": "https://github.com/jpeedroza/to-do#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "node-sass": "^5.0.0"
   },
   "devDependencies": {
@@ -41,5 +41,7 @@
     "webpack": "^5.11.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "main": "webpack.config.js",
+  "description": "To-doing is a site who has cards with reminders where you can create, delete and edit them."
 }

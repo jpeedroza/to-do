@@ -7,13 +7,15 @@
   margin: 20px;
 
 
-    &__title, 
+    &__title,
     &__text{
       @extend %centeredTextCard;
     }
 
     &__title{
       @include areas(280px, 0);
+      font-weight: 500;
+      font-size: 26px;
       margin: 10px 5px;
     }
 
@@ -22,10 +24,10 @@
       margin: 20px 5px 30px;
     }
 
-    &__delete, 
+    &__delete,
     &__edit{
       @extend %buttonsCard;
       margin: 5px;
     }
-    
+
 }
