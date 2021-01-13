@@ -1,0 +1,64 @@
+@import '../abstracts/global';
+
+.mainCards{
+  grid-area: card;
+  padding: 0 50px;
+
+  &__content{
+    padding: 0 50px;
+    grid-area: main;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+  }
+
+    &__title,
+    &__type,
+    &__text{
+      width: 640px;
+      padding: 0;
+      margin-bottom: 30px;
+      padding-left: 20px;
+
+      &::placeholder{
+        text-align: center;
+        padding-top: 70px;
+        font-family: roboto;
+      }
+    }
+
+  &__label{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__text{
+    height: 169px;
+    resize: none;
+    font-family: roboto;
+    padding-top: 10px;
+  }
+
+  &__submit{
+    width: 118px;
+    height: 35px;
+    background-color: $blackColor;
+    border-color: black;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 500ms;
+
+    &:hover{
+      background-color: $baseColor;
+      color: $blackColor;
+    }
+  }
+}

@@ -3,7 +3,7 @@
 .modal{
   @include areas(100vw, 100vh, true);
   @extend %centeredItens;
-  background-color: rgba($color: $black, $alpha: 0.5);
+  background-color: rgba($color: black, $alpha: 0.5);
   position: fixed;
   visibility: hidden;
 
@@ -11,7 +11,7 @@
     @include areas(500px, 400px, true);
     @extend %centeredItens;
     flex-direction: column;
-    background-color: $white;
+    background-color: black;
 
     &__form{
       @extend %centeredItens;
@@ -23,7 +23,7 @@
         font-weight: 500;
       }
 
-      &-title, 
+      &-title,
       &-text{
         @include areas(200px, 25px, true);
         margin: 5px;
@@ -38,7 +38,7 @@
 
     &__buttons{
 
-      &-create, 
+      &-create,
       &-close{
         @include areas(80px, 25px, true);
         @extend %buttonsModal;

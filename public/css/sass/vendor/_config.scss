@@ -1,11 +1,17 @@
 #container{
   display: grid;
-  grid-template-columns: repeat(4, 20%);
-  grid-template-rows: 150px auto 80px;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: 150px repeat(6, auto) 110px;
   min-height: 100vh;
-  grid-template-areas: 
-  "header header header header header header"
-  "main main main main main main"
-  "footer footer footer footer footer footer";
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "card card card card"
+    "card card card card"
+    "card card card card"
+    "card card card card"
+    "card card card card"
+    "footer footer footer footer";
+  gap: 10px;
   font-family: roboto;
 }

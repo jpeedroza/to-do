@@ -49,25 +49,18 @@ table {
 
 #container {
   display: grid;
-  grid-template-columns: repeat(4, 20%);
-  grid-template-rows: 150px auto 80px;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: 150px repeat(6, auto) 110px;
   min-height: 100vh;
-  grid-template-areas: "header header header header header header" "main main main main main main" "footer footer footer footer footer footer";
+  grid-template-areas: "header header header header" "main main main main" "card card card card" "card card card card" "card card card card" "card card card card" "card card card card" "footer footer footer footer";
+  gap: 10px;
   font-family: roboto;
 }
 
-.modal__box__form, .modal__box, .modal, .footer, .main__cards, .header {
+.modal__box__form, .modal__box, .modal, .main__cards {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__options-addBlock, .header__options-search {
-  background-color: #dddddd;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 .card__title, .card__text {
@@ -78,7 +71,7 @@ table {
 .card__delete, .card__edit {
   padding: 5px 8px;
   border-radius: 5px;
-  background-color: #516c8d;
+  background-color: black;
   transition: 200ms color;
   position: relative;
   top: -10px;
@@ -90,63 +83,35 @@ table {
 .modal__box__buttons-create, .modal__box__buttons-close {
   background-color: black;
   border: none;
-  color: #dddddd;
+  color: black;
   transition: 500ms background, 500ms color;
 }
 .modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: #dddddd;
+  background-color: white;
   border: 2px solid black;
   color: black;
 }
 
 .header {
-  background-color: #304163;
   grid-area: header;
-  display: flex;
+  background-color: #9AA0D9;
   padding: 0 50px;
-}
-.header__img {
-  width: 100px;
-  margin-right: 20px;
+  display: flex;
+  align-items: center;
 }
 .header__title {
-  color: #dddddd;
-}
-.header__options {
-  width: 300px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-left: auto;
-}
-.header__options-addBlock {
   color: black;
-  transition: 500ms color, 500ms background;
-}
-.header__options-addBlock:hover {
-  color: #dddddd;
-  background-color: #304163;
-}
-.header__options-search {
-  outline: none;
-  transition: 500ms border;
-}
-.header__options-search:focus {
-  border-bottom: 2px solid black;
+  font-size: 96px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  padding-left: 24px;
 }
 
-.modal__box__form, .modal__box, .modal, .footer, .main__cards, .header {
+.modal__box__form, .modal__box, .modal, .main__cards {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__options-addBlock, .header__options-search {
-  background-color: #dddddd;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 .card__title, .card__text {
@@ -157,7 +122,7 @@ table {
 .card__delete, .card__edit {
   padding: 5px 8px;
   border-radius: 5px;
-  background-color: #516c8d;
+  background-color: black;
   transition: 200ms color;
   position: relative;
   top: -10px;
@@ -169,38 +134,62 @@ table {
 .modal__box__buttons-create, .modal__box__buttons-close {
   background-color: black;
   border: none;
-  color: #dddddd;
+  color: black;
   transition: 500ms background, 500ms color;
 }
 .modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: #dddddd;
+  background-color: white;
   border: 2px solid black;
   color: black;
 }
 
 .main {
-  background-color: #dddddd;
   grid-area: main;
+  padding: 0 50px;
+}
+.main__settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main__settings > label {
+  display: flex;
+  align-items: center;
+}
+.main__settings > a {
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+.main__settings > a:hover {
+  text-decoration: underline;
+  text-decoration-color: #323232;
+}
+.main__input {
+  width: 224px;
+  height: 34px;
+  padding-left: 35px;
+}
+.main__img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: 30px;
 }
 .main__cards {
+  grid-area: card;
   flex-wrap: wrap;
 }
-.main__cards-msg {
-  margin-top: 250px;
+.main__empty {
+  font-size: 30px;
+  font-weight: 500;
 }
 
-.modal__box__form, .modal__box, .modal, .footer, .header, .main__cards {
+.modal__box__form, .modal__box, .modal, .main__cards {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__options-addBlock, .header__options-search {
-  background-color: #dddddd;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 .card__title, .card__text {
@@ -211,7 +200,7 @@ table {
 .card__delete, .card__edit {
   padding: 5px 8px;
   border-radius: 5px;
-  background-color: #516c8d;
+  background-color: black;
   transition: 200ms color;
   position: relative;
   top: -10px;
@@ -223,11 +212,99 @@ table {
 .modal__box__buttons-create, .modal__box__buttons-close {
   background-color: black;
   border: none;
-  color: #dddddd;
+  color: black;
   transition: 500ms background, 500ms color;
 }
 .modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: #dddddd;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+}
+
+.mainCards {
+  grid-area: card;
+  padding: 0 50px;
+}
+.mainCards__content {
+  padding: 0 50px;
+  grid-area: main;
+  font-size: 24px;
+  font-weight: 500;
+}
+.mainCards__form {
+  display: flex;
+  flex-direction: column;
+}
+.mainCards__title, .mainCards__type, .mainCards__text {
+  width: 640px;
+  padding: 0;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+.mainCards__title::placeholder, .mainCards__type::placeholder, .mainCards__text::placeholder {
+  text-align: center;
+  padding-top: 70px;
+  font-family: roboto;
+}
+.mainCards__label {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.mainCards__text {
+  height: 169px;
+  resize: none;
+  font-family: roboto;
+  padding-top: 10px;
+}
+.mainCards__submit {
+  width: 118px;
+  height: 35px;
+  background-color: #323232;
+  border-color: black;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  transition: 500ms;
+}
+.mainCards__submit:hover {
+  background-color: #F5F5F5;
+  color: #323232;
+}
+
+.modal__box__form, .modal__box, .modal, .main__cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__title, .card__text {
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: black;
+  transition: 200ms color;
+  position: relative;
+  top: -10px;
+}
+.card__delete:hover, .card__edit:hover {
+  color: white;
+}
+
+.modal__box__buttons-create, .modal__box__buttons-close {
+  background-color: black;
+  border: none;
+  color: black;
+  transition: 500ms background, 500ms color;
+}
+.modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
+  background-color: white;
   border: 2px solid black;
   color: black;
 }
@@ -252,18 +329,10 @@ table {
   margin: 5px;
 }
 
-.modal__box__form, .modal__box, .modal, .footer, .header, .main__cards {
+.modal__box__form, .modal__box, .modal, .main__cards {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__options-addBlock, .header__options-search {
-  background-color: #dddddd;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 .card__title, .card__text {
@@ -274,7 +343,7 @@ table {
 .card__delete, .card__edit {
   padding: 5px 8px;
   border-radius: 5px;
-  background-color: #516c8d;
+  background-color: black;
   transition: 200ms color;
   position: relative;
   top: -10px;
@@ -286,36 +355,40 @@ table {
 .modal__box__buttons-create, .modal__box__buttons-close {
   background-color: black;
   border: none;
-  color: #dddddd;
+  color: black;
   transition: 500ms background, 500ms color;
 }
 .modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: #dddddd;
+  background-color: white;
   border: 2px solid black;
   color: black;
 }
 
 .footer {
-  background-color: #304163;
   grid-area: footer;
+  background-color: #9AA0D9;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
 }
 .footer__text {
-  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}
+.footer__img {
+  width: 50px;
+  height: 50px;
+  transition: 250ms;
+}
+.footer__img:hover {
+  fill: #F5F5F5;
 }
 
-.modal__box__form, .modal__box, .modal, .header, .main__cards, .footer {
+.modal__box__form, .modal__box, .modal, .main__cards {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.header__options-addBlock, .header__options-search {
-  background-color: #dddddd;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
 }
 
 .card__title, .card__text {
@@ -326,7 +399,7 @@ table {
 .card__delete, .card__edit {
   padding: 5px 8px;
   border-radius: 5px;
-  background-color: #516c8d;
+  background-color: black;
   transition: 200ms color;
   position: relative;
   top: -10px;
@@ -338,11 +411,11 @@ table {
 .modal__box__buttons-create, .modal__box__buttons-close {
   background-color: black;
   border: none;
-  color: #dddddd;
+  color: black;
   transition: 500ms background, 500ms color;
 }
 .modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: #dddddd;
+  background-color: white;
   border: 2px solid black;
   color: black;
 }
@@ -358,7 +431,7 @@ table {
   width: 500px;
   height: 400px;
   flex-direction: column;
-  background-color: #dddddd;
+  background-color: black;
 }
 .modal__box__form {
   flex-direction: column;

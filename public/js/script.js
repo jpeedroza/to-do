@@ -2,7 +2,7 @@
 
 // import '../public/css/sass/style.scss';
 // import book from '../public/img/book.png';
-
+/*
 class HeaderCommands {
   modalContent(param){
     this.inputTitle = inputContentTitle;
@@ -94,3 +94,4 @@ sectionCards.onclick = e => CardCreate.listenClick(e);
 inputSearch.addEventListener('keyup', () =>{
   HeaderCommand.searchCard();
 })
+*/

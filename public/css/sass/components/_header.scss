@@ -1,49 +1,18 @@
 @import '../abstracts/global';
 
 .header{
-  @include base($mainColor, header, flex, true);
-  @extend %centeredItens;
+  grid-area: header;
+  background-color: $mainColor;
   padding: 0 50px;
+  display: flex;
+  align-items: center;
 
-  &__img{
-    @include areas(100px, 0);
-    margin-right: 20px;
-  }
-  
   &__title{
-    color: $white;
+    color: black;
+    font-size: 96px;
+    font-weight: 500;
+    letter-spacing: .8px;
+    text-decoration: none;
+    padding-left: 24px;
   }
-
-  &__options{
-    @include areas(300px, 0);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-left: auto;
-
-    &-addBlock, 
-    &-search{
-      @extend %mainPageButton;
-    }
-
-    &-addBlock{
-      color: $black;
-      transition: 500ms color, 500ms background;
-
-      &:hover{
-        color: $white;
-        background-color: $mainColor;
-      }
-    }
-    
-    &-search{
-      outline: none;
-      transition: 500ms border;
-
-      &:focus{
-        border-bottom: 2px solid black;
-      }
-    }
-  }
-
 }

@@ -1,13 +1,5 @@
 @import './variables';
 
-@mixin base($backgroundColor, $gridArea, $display, $containDisplay: false){
-  background-color: $backgroundColor;
-  grid-area: $gridArea;
-  @if $containDisplay{
-    display: $display;
-  }
-}
-
 @mixin areas($width, $height, $containHeight: false){
   width: $width;
 
@@ -23,8 +15,8 @@
 }
 
 %mainPageButton{
-  background-color: $white;
-  border: 1px solid $black;
+  background-color: black;
+  border: 1px solid black;
   border-radius: 20px;
   padding: 5px 10px;
   cursor: pointer;
@@ -38,25 +30,25 @@
 %buttonsCard{
   padding: 5px 8px;
   border-radius: 5px;
-  background-color: $lightMainColor;
+  background-color: black;
   transition: 200ms color;
   position: relative;
-  top: -10px; 
-  
+  top: -10px;
+
   &:hover{
     color: white;
   }
 }
 
 %buttonsModal{
-  background-color: $black;
+  background-color: black;
   border: none;
-  color: $white;
+  color: black;
   transition: 500ms background, 500ms color;
 
   &:hover{
-    background-color: $white;
-    border: 2px solid $black;
-    color: $black;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
   }
 }

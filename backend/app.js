@@ -2,26 +2,31 @@ const express = require('express');
 const helmet = require('helmet'); //TL
 const createError = require('http-errors'); //TL
 const compression = require('compression'); //TL
-const logConsole = require('morgan');
-const dotEnv = require('dotenv');
+const cors = require('cors');
 const path = require('path');
 const http = require('http');
+const mongoose = require('./db');
 
-const result = dotEnv.config();
 const app = express();
+require('dotenv').config();
 
 const indexRoute = require('./router/index');
 
 app.engine('html', require('ejs').renderFile)
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs')
 
-app.use(logConsole('dev'));
+app.use(cors());
 app.use(helmet());
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, '../public')));
+
+mongoose.connect(process.env.DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.use('/', indexRoute);
 
@@ -34,4 +39,4 @@ httpServer.listen(process.env.PORT);
 console.clear();
 console.log(`-> Listening in port ${process.env.PORT}.`)
 
-module.exports = app;
+module.exports = express;
