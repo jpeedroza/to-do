@@ -68,18 +68,6 @@ table {
   text-align: center;
 }
 
-.card__delete, .card__edit {
-  padding: 5px 8px;
-  border-radius: 5px;
-  background-color: black;
-  transition: 200ms color;
-  position: relative;
-  top: -10px;
-}
-.card__delete:hover, .card__edit:hover {
-  color: white;
-}
-
 .modal__box__buttons-create, .modal__box__buttons-close {
   background-color: black;
   border: none;
@@ -117,18 +105,6 @@ table {
 .card__title, .card__text {
   word-wrap: break-word;
   text-align: center;
-}
-
-.card__delete, .card__edit {
-  padding: 5px 8px;
-  border-radius: 5px;
-  background-color: black;
-  transition: 200ms color;
-  position: relative;
-  top: -10px;
-}
-.card__delete:hover, .card__edit:hover {
-  color: white;
 }
 
 .modal__box__buttons-create, .modal__box__buttons-close {
@@ -195,18 +171,6 @@ table {
 .card__title, .card__text {
   word-wrap: break-word;
   text-align: center;
-}
-
-.card__delete, .card__edit {
-  padding: 5px 8px;
-  border-radius: 5px;
-  background-color: black;
-  transition: 200ms color;
-  position: relative;
-  top: -10px;
-}
-.card__delete:hover, .card__edit:hover {
-  color: white;
 }
 
 .modal__box__buttons-create, .modal__box__buttons-close {
@@ -285,18 +249,6 @@ table {
   text-align: center;
 }
 
-.card__delete, .card__edit {
-  padding: 5px 8px;
-  border-radius: 5px;
-  background-color: black;
-  transition: 200ms color;
-  position: relative;
-  top: -10px;
-}
-.card__delete:hover, .card__edit:hover {
-  color: white;
-}
-
 .modal__box__buttons-create, .modal__box__buttons-close {
   background-color: black;
   border: none;
@@ -314,6 +266,7 @@ table {
   list-style-type: none;
   border: 1px solid black;
   margin: 20px;
+  padding: 5px;
 }
 .card__title {
   width: 280px;
@@ -325,8 +278,30 @@ table {
   width: 290px;
   margin: 20px 5px 30px;
 }
+.card__type {
+  background: #9AA0D9;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 0 8px;
+  word-wrap: break-word;
+}
 .card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9AA0D9;
+  transition: 200ms color;
   margin: 5px;
+}
+.card__delete > svg, .card__edit > svg {
+  width: 24px;
+  height: 24px;
+}
+.card__options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .modal__box__form, .modal__box, .modal, .main__cards {
@@ -338,18 +313,6 @@ table {
 .card__title, .card__text {
   word-wrap: break-word;
   text-align: center;
-}
-
-.card__delete, .card__edit {
-  padding: 5px 8px;
-  border-radius: 5px;
-  background-color: black;
-  transition: 200ms color;
-  position: relative;
-  top: -10px;
-}
-.card__delete:hover, .card__edit:hover {
-  color: white;
 }
 
 .modal__box__buttons-create, .modal__box__buttons-close {
@@ -394,18 +357,6 @@ table {
 .card__title, .card__text {
   word-wrap: break-word;
   text-align: center;
-}
-
-.card__delete, .card__edit {
-  padding: 5px 8px;
-  border-radius: 5px;
-  background-color: black;
-  transition: 200ms color;
-  position: relative;
-  top: -10px;
-}
-.card__delete:hover, .card__edit:hover {
-  color: white;
 }
 
 .modal__box__buttons-create, .modal__box__buttons-close {

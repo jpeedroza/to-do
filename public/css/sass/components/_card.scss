@@ -5,6 +5,7 @@
   list-style-type: none;
   border: 1px solid black;
   margin: 20px;
+  padding: 5px;
 
 
     &__title,
@@ -24,10 +25,35 @@
       margin: 20px 5px 30px;
     }
 
+    &__type{
+      background: $mainColor;
+      border-radius: 20px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      padding: 0 8px;
+      word-wrap: break-word;
+
+    }
+
     &__delete,
     &__edit{
-      @extend %buttonsCard;
+      padding: 5px 8px;
+      border-radius: 5px;
+      background-color: $mainColor;
+      transition: 200ms color;
       margin: 5px;
+
+      > svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &__options{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
 
 }

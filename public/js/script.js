@@ -95,3 +95,12 @@ inputSearch.addEventListener('keyup', () =>{
   HeaderCommand.searchCard();
 })
 */
+
+const delet = document.querySelectorAll('.card__delete');
+const edit = document.querySelectorAll('.card__edit');
+
+delet.forEach(button => {
+  button.addEventListener('click', () =>{
+    console.log('me clicou aq o');
+  })
+})

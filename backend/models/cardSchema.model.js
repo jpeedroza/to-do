@@ -9,7 +9,8 @@ const Schema = new mongoose.Schema({
   },
   type:{
     type: String,
-    trim: true
+    trim: true,
+    maxlength: [37, 'Max length is 37 characters']
   },
   text: {
     type: String,
