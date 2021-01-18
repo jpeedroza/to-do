@@ -25,15 +25,16 @@ app.use('/public', express.static(path.join(__dirname, '../public')));
 
 mongoose.connect("mongodb://localhost:27017/toDoing", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false,
 });
 
 app.use('/', indexRoute);
-/*
+
 app.use((req,res,next) =>{
   next(createError(404));
 })
- */
+
 const httpServer = http.createServer(app);
 httpServer.listen(process.env.PORT);
 console.clear();

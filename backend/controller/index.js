@@ -51,9 +51,9 @@ class ControllerCard{
     }
   }
 
-  getEditPage = (req,res,next) =>{
+  getEditPage = async (req,res,next) =>{
     try {
-      Card.findById(req.params.id, (err,doc) =>{
+      await Card.findById(req.params.id, (err,doc) =>{
         if(!err){
           res.render('cards', {
             pageContent: "Edit de Card",
@@ -86,6 +86,15 @@ class ControllerCard{
     }
   }
 
+  deleteCard = async (req,res,next) =>{
+    try {
+      await Card.findByIdAndDelete(req.params.id)
+      res.redirect('/')
+    } catch (err) {
+      res.status(404).end();
+      console.log(err)
+    }
+  }
 
   getErrors(err){
     let errorArray = [];
