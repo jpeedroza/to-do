@@ -6,11 +6,12 @@ const ControllerCard = new Controller;
 const Card = require('../models/cardSchema.model');
 
 router.route('/')
-  .get( ControllerCard.getLandingPage );
+  .get( ControllerCard.getLandingPage )
 
 router.route('/cards')
   .get( ControllerCard.getCreateCardPage )
   .post( ControllerCard.CreateCard );
+
 
 
 module.exports = router;

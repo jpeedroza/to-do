@@ -12,6 +12,10 @@ class ControllerCard{
             return doc
           })
       });
+      Card.findByIdAndUpdate('6000428629653a042d3cbd90', (err, docs) =>{
+        const card = docs
+        console.log(card)
+      })
     } catch (error) {
       res.status(404).end()
       console.log(error);
@@ -28,13 +32,12 @@ class ControllerCard{
   }
 
   CreateCard = async (req,res,next) =>{
-    const addCard = new Card({
-      title: req.body.titleInput[0],
-      type: req.body.titleInput[1],
-      text: req.body.textInput
-    });
-
     try {
+      const addCard = new Card({
+        title: req.body.titleInput[0],
+        type: req.body.titleInput[1],
+        text: req.body.textInput
+      });
       await addCard.save((err, document) =>{
         const errors = this.getErrors(err);
         if(errors == undefined) {
