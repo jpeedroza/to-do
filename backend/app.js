@@ -23,17 +23,17 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/public', express.static(path.join(__dirname, '../public')));
 
-mongoose.connect(process.env.DB_URL, {
+mongoose.connect("mongodb://localhost:27017/toDoing", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
 app.use('/', indexRoute);
-
+/*
 app.use((req,res,next) =>{
   next(createError(404));
 })
-
+ */
 const httpServer = http.createServer(app);
 httpServer.listen(process.env.PORT);
 console.clear();

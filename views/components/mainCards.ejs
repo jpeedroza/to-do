@@ -1,13 +1,17 @@
-<h2 class="mainCards__content">Criação de Cards</h2>
+<h2 class="mainCards__content">
+  <%= pageContent %>
+</h2>
 <main class="mainCards">
-  <form class="mainCards__form" action="/cards" method="POST">
+  <form class="mainCards__form" action="<%= actions %> " method="<%= method %>">
     <label class="mainCards__label" for="titleInput">Titulo</label>
-    <input class="main__input mainCards__title" type="text" name="titleInput" placeholder="Digite aqui seu título">
-    <label class="mainCards__label" for="typeInput">Tipo</label>
-    <input class="main__input mainCards__type" type="type" name="titleInput" placeholder="Digite aqui seu tipo">
+    <input class=" main__input mainCards__title" type="text" name="titleInput" placeholder="Digite aqui seu título"
+      value="<%= cardContent.title %>">
+    <label class=" mainCards__label" for="typeInput">Tipo</label>
+    <input class="main__input mainCards__type" type="type" name="titleInput" placeholder="Digite aqui seu tipo"
+      value="<%= cardContent.type %>">
     <label class="mainCards__label" for="titleInput">Texto</label>
     <textarea class="main__input mainCards__text" cols="30" rows="10" name="textInput"
-      placeholder="Digite aqui seu Texto"></textarea>
+      placeholder="Digite aqui seu Texto"><%= cardContent.text %></textarea>
     <button class="mainCards__submit" type="submit">Adicionar</button>
   </form>
 </main>

@@ -10,12 +10,8 @@ class ControllerCard{
         cardAmount:
           await Card.find((err, doc) =>{
             return doc
-          })
+          }),
       });
-      Card.findByIdAndUpdate('6000428629653a042d3cbd90', (err, docs) =>{
-        const card = docs
-        console.log(card)
-      })
     } catch (error) {
       res.status(404).end()
       console.log(error);
@@ -24,14 +20,19 @@ class ControllerCard{
 
   getCreateCardPage = (req,res,next) =>{
     try {
-      res.render('cards');
+      res.render('cards', {
+        pageContent: "Criação de Card",
+        cardContent: '',
+        actions: '/cards',
+        method: 'POST'
+      });
     } catch (error) {
       res.status(404).end()
       console.log(error);
     }
   }
 
-  CreateCard = async (req,res,next) =>{
+  createCard = async (req,res,next) =>{
     try {
       const addCard = new Card({
         title: req.body.titleInput[0],
@@ -49,6 +50,42 @@ class ControllerCard{
       console.log(error);
     }
   }
+
+  getEditPage = (req,res,next) =>{
+    try {
+      Card.findById(req.params.id, (err,doc) =>{
+        if(!err){
+          res.render('cards', {
+            pageContent: "Edit de Card",
+            cardContent: doc,
+            actions: `/edit/${req.params.id}`,
+            method: 'POST'
+          })
+        }
+      })
+    } catch (error) {
+      res.status(404).end();
+      console.log(error);
+    }
+  }
+
+  updateCard = async (req,res,next) =>{
+    try {
+      const changes = {
+        title: req.body.titleInput[0],
+        type: req.body.titleInput[1],
+        text: req.body.textInput
+      }
+      Card.findByIdAndUpdate(req.params.id, changes ,{new: true}, (err, doc) =>{
+        if(err) throw new Error(err)
+      })
+      res.redirect('/')
+    } catch (error) {
+      res.status(404).end()
+      console.log(error);
+    }
+  }
+
 
   getErrors(err){
     let errorArray = [];

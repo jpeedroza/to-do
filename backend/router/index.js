@@ -8,10 +8,13 @@ const Card = require('../models/cardSchema.model');
 router.route('/')
   .get( ControllerCard.getLandingPage )
 
-router.route('/cards')
+router.route('/cards/')
   .get( ControllerCard.getCreateCardPage )
-  .post( ControllerCard.CreateCard );
+  .post( ControllerCard.createCard )
 
+router.route('/edit/:id')
+  .get( ControllerCard.getEditPage)
+  .post( ControllerCard.updateCard);
 
 
 module.exports = router;
