@@ -7,48 +7,34 @@
     height: $height;
   }
 }
+@mixin stylingText($fontSize){
+  font-weight: $standartWeight;
+  font-size: $fontSize;
+}
 
 %centeredItens{
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-%mainPageButton{
-  background-color: black;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-%centeredTextCard{
-  word-wrap: break-word;
-  text-align: center;
 }
 
 %buttonsCard{
   padding: 5px 8px;
   border-radius: 5px;
-  background-color: black;
-  transition: 200ms color;
-  position: relative;
-  top: -10px;
+  background-color: $mainColor;
+  transition: 200ms background;
+  margin: 5px;
 
   &:hover{
-    color: white;
+    background-color: $mainColor__hover;
   }
 }
 
-%buttonsModal{
-  background-color: black;
-  border: none;
-  color: black;
-  transition: 500ms background, 500ms color;
-
-  &:hover{
-    background-color: white;
-    border: 2px solid black;
-    color: black;
-  }
+%labelCard{
+  background: $mainColor;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 0 8px;
+  word-wrap: break-word;
 }

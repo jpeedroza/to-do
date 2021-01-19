@@ -41,7 +41,6 @@
       &-create,
       &-close{
         @include areas(80px, 25px, true);
-        @extend %buttonsModal;
       }
     }
   }

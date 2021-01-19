@@ -1,24 +1,31 @@
 @import '../abstracts/global';
 
 .footer{
-  grid-area: footer;
+  @extend %centeredItens;
   background-color: $mainColor;
-  display: flex;
+  flex-wrap: wrap;
+  grid-area: footer;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
+  padding: $space50;
 
   &__text{
-    font-size: 20px;
-    font-weight: 500;
+    @include stylingText(20px);
   }
 
   &__img{
-    width: 50px;
-    height: 50px;
+    @include areas(50px, 50px, true);
     transition: 250ms;
+
     &:hover{
       fill: $baseColor;
+    }
+  }
+}
+@media screen and (max-height: 375px){
+  .footer{
+    &__text{
+      word-break: break-word;
+      width: 200px;
     }
   }
 }

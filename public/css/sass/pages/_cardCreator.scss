@@ -2,63 +2,64 @@
 
 .mainCards{
   grid-area: card;
-  padding: 0 50px;
+  padding: $space50;
 
   &__content{
-    padding: 0 50px;
+    @include stylingText(24px);
     grid-area: main;
-    font-size: 24px;
-    font-weight: 500;
+    margin: $space50;
   }
 
   &__form{
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
   }
 
     &__title,
     &__type,
     &__text{
-      width: 640px;
       padding: 0;
-      margin-bottom: 30px;
       padding-left: 20px;
+      width: 640px;
 
       &::placeholder{
-        text-align: center;
-        padding-top: 70px;
         font-family: roboto;
+        padding-top: 70px;
+        text-align: center;
       }
     }
 
   &__label{
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    @include stylingText(20px);
+    margin-bottom: 5px;
   }
 
   &__text{
-    height: 169px;
-    resize: none;
     font-family: roboto;
+    height: 170px;
     padding-top: 10px;
+    resize: none;
   }
 
   &__submit{
-    width: 118px;
-    height: 35px;
+    @include areas(120px, 35px, true);
+    @include stylingText(20px);
     background-color: $blackColor;
     border-color: black;
     border-radius: 3px;
     color: white;
     cursor: pointer;
-    font-size: 20px;
-    font-weight: 500;
     transition: 500ms;
 
     &:hover{
       background-color: $baseColor;
       color: $blackColor;
     }
+  }
+
+  &__alert{
+    margin-top: 5px;
+    color: red;
   }
 }

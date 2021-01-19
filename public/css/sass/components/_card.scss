@@ -2,21 +2,21 @@
 
 .card{
   @include areas(300px, 0);
-  list-style-type: none;
   border: 1px solid black;
+  list-style-type: none;
   margin: 20px;
   padding: 5px;
 
 
     &__title,
     &__text{
-      @extend %centeredTextCard;
+      text-align: center;
+      word-wrap: break-word;
     }
 
     &__title{
       @include areas(280px, 0);
-      font-weight: 500;
-      font-size: 26px;
+      @include stylingText(26px);
       margin: 10px 5px;
     }
 
@@ -26,33 +26,20 @@
     }
 
     &__type{
-      background: $mainColor;
-      border-radius: 20px;
-      color: white;
-      text-align: center;
-      font-size: 14px;
-      padding: 0 8px;
-      word-wrap: break-word;
-
+      @extend %labelCard;
     }
 
     &__delete,
     &__edit{
-      padding: 5px 8px;
-      border-radius: 5px;
-      background-color: $mainColor;
-      transition: 200ms color;
-      margin: 5px;
+      @extend %buttonsCard;
 
       > svg {
-        width: 24px;
-        height: 24px;
+        @include areas(24px, 24px, true);
       }
     }
 
     &__options{
-      display: flex;
-      align-items: center;
+      @extend %centeredItens;
       justify-content: flex-end;
     }
 

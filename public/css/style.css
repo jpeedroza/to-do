@@ -57,94 +57,93 @@ table {
   font-family: roboto;
 }
 
-.modal__box__form, .modal__box, .modal, .main__cards {
+.modal__box__form, .modal__box, .modal, .footer, .card__options, .main__cards, .main__settings > label, .main__settings, .header {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.card__title, .card__text {
-  word-wrap: break-word;
+.card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9AA0D9;
+  transition: 200ms background;
+  margin: 5px;
+}
+.card__delete:hover, .card__edit:hover {
+  background-color: #656fc2;
+}
+
+.card__type {
+  background: #9AA0D9;
+  border-radius: 20px;
+  color: white;
   text-align: center;
-}
-
-.modal__box__buttons-create, .modal__box__buttons-close {
-  background-color: black;
-  border: none;
-  color: black;
-  transition: 500ms background, 500ms color;
-}
-.modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
+  font-size: 14px;
+  padding: 0 8px;
+  word-wrap: break-word;
 }
 
 .header {
-  grid-area: header;
   background-color: #9AA0D9;
+  grid-area: header;
   padding: 0 50px;
-  display: flex;
-  align-items: center;
 }
 .header__title {
-  color: black;
-  font-size: 96px;
   font-weight: 500;
+  font-size: 96px;
+  color: black;
   letter-spacing: 0.8px;
+  margin-left: 24px;
   text-decoration: none;
-  padding-left: 24px;
 }
 
-.modal__box__form, .modal__box, .modal, .main__cards {
+.modal__box__form, .modal__box, .modal, .footer, .card__options, .main__cards, .main__settings > label, .main__settings, .header {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.card__title, .card__text {
-  word-wrap: break-word;
+.card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9AA0D9;
+  transition: 200ms background;
+  margin: 5px;
+}
+.card__delete:hover, .card__edit:hover {
+  background-color: #656fc2;
+}
+
+.card__type {
+  background: #9AA0D9;
+  border-radius: 20px;
+  color: white;
   text-align: center;
-}
-
-.modal__box__buttons-create, .modal__box__buttons-close {
-  background-color: black;
-  border: none;
-  color: black;
-  transition: 500ms background, 500ms color;
-}
-.modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
+  font-size: 14px;
+  padding: 0 8px;
+  word-wrap: break-word;
 }
 
 .main {
   grid-area: main;
-  padding: 0 50px;
+  margin: 0 50px;
 }
 .main__settings {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-}
-.main__settings > label {
-  display: flex;
-  align-items: center;
 }
 .main__settings > a {
-  font-size: 24px;
   font-weight: 500;
+  font-size: 24px;
+  color: #323232;
   text-decoration: none;
-  color: black;
 }
 .main__settings > a:hover {
   text-decoration: underline;
   text-decoration-color: #323232;
 }
 .main__input {
-  width: 224px;
-  height: 34px;
+  width: 225px;
+  height: 35px;
   padding-left: 35px;
 }
 .main__img {
@@ -154,35 +153,47 @@ table {
   left: 30px;
 }
 .main__cards {
-  grid-area: card;
   flex-wrap: wrap;
-}
-.main__empty {
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.modal__box__form, .modal__box, .modal, .main__cards {
-  display: flex;
-  align-items: center;
+  grid-area: card;
   justify-content: center;
 }
+.main__empty {
+  font-weight: 500;
+  font-size: 30px;
+}
 
-.card__title, .card__text {
-  word-wrap: break-word;
+@media screen and (max-width: 375px) {
+  .main__settings {
+    justify-content: center;
+  }
+  .main__settings > label {
+    margin-bottom: 20px;
+  }
+}
+.modal__box__form, .modal__box, .modal, .footer, .card__options, .header, .main__settings, .main__settings > label, .main__cards {
+  display: flex;
+  align-items: center;
+}
+
+.card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9AA0D9;
+  transition: 200ms background;
+  margin: 5px;
+}
+.card__delete:hover, .card__edit:hover {
+  background-color: #656fc2;
+}
+
+.card__type {
+  background: #9AA0D9;
+  border-radius: 20px;
+  color: white;
   text-align: center;
-}
-
-.modal__box__buttons-create, .modal__box__buttons-close {
-  background-color: black;
-  border: none;
-  color: black;
-  transition: 500ms background, 500ms color;
-}
-.modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
+  font-size: 14px;
+  padding: 0 8px;
+  word-wrap: break-word;
 }
 
 .mainCards {
@@ -190,83 +201,94 @@ table {
   padding: 0 50px;
 }
 .mainCards__content {
-  padding: 0 50px;
-  grid-area: main;
-  font-size: 24px;
   font-weight: 500;
+  font-size: 24px;
+  grid-area: main;
+  margin: 0 50px;
 }
 .mainCards__form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 .mainCards__title, .mainCards__type, .mainCards__text {
-  width: 640px;
   padding: 0;
-  margin-bottom: 30px;
   padding-left: 20px;
+  width: 640px;
 }
 .mainCards__title::placeholder, .mainCards__type::placeholder, .mainCards__text::placeholder {
-  text-align: center;
-  padding-top: 70px;
   font-family: roboto;
+  padding-top: 70px;
+  text-align: center;
 }
 .mainCards__label {
-  font-size: 20px;
   font-weight: 500;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 .mainCards__text {
-  height: 169px;
-  resize: none;
   font-family: roboto;
+  height: 170px;
   padding-top: 10px;
+  resize: none;
 }
 .mainCards__submit {
-  width: 118px;
+  width: 120px;
   height: 35px;
+  font-weight: 500;
+  font-size: 20px;
   background-color: #323232;
   border-color: black;
   border-radius: 3px;
   color: white;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: 500;
   transition: 500ms;
 }
 .mainCards__submit:hover {
   background-color: #F5F5F5;
   color: #323232;
 }
+.mainCards__alert {
+  margin-top: 5px;
+  color: red;
+}
 
-.modal__box__form, .modal__box, .modal, .main__cards {
+.modal__box__form, .modal__box, .modal, .footer, .card__options, .header, .main__settings, .main__settings > label, .main__cards {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.card__title, .card__text {
-  word-wrap: break-word;
+.card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9AA0D9;
+  transition: 200ms background;
+  margin: 5px;
+}
+.card__delete:hover, .card__edit:hover {
+  background-color: #656fc2;
+}
+
+.card__type {
+  background: #9AA0D9;
+  border-radius: 20px;
+  color: white;
   text-align: center;
-}
-
-.modal__box__buttons-create, .modal__box__buttons-close {
-  background-color: black;
-  border: none;
-  color: black;
-  transition: 500ms background, 500ms color;
-}
-.modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
+  font-size: 14px;
+  padding: 0 8px;
+  word-wrap: break-word;
 }
 
 .card {
   width: 300px;
-  list-style-type: none;
   border: 1px solid black;
+  list-style-type: none;
   margin: 20px;
   padding: 5px;
+}
+.card__title, .card__text {
+  text-align: center;
+  word-wrap: break-word;
 }
 .card__title {
   width: 280px;
@@ -278,6 +300,30 @@ table {
   width: 290px;
   margin: 20px 5px 30px;
 }
+.card__delete > svg, .card__edit > svg {
+  width: 24px;
+  height: 24px;
+}
+.card__options {
+  justify-content: flex-end;
+}
+
+.modal__box__form, .modal__box, .modal, .footer, .header, .main__settings, .main__settings > label, .main__cards, .card__options {
+  display: flex;
+  align-items: center;
+}
+
+.card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9AA0D9;
+  transition: 200ms background;
+  margin: 5px;
+}
+.card__delete:hover, .card__edit:hover {
+  background-color: #656fc2;
+}
+
 .card__type {
   background: #9AA0D9;
   border-radius: 20px;
@@ -287,57 +333,17 @@ table {
   padding: 0 8px;
   word-wrap: break-word;
 }
-.card__delete, .card__edit {
-  padding: 5px 8px;
-  border-radius: 5px;
-  background-color: #9AA0D9;
-  transition: 200ms color;
-  margin: 5px;
-}
-.card__delete > svg, .card__edit > svg {
-  width: 24px;
-  height: 24px;
-}
-.card__options {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.modal__box__form, .modal__box, .modal, .main__cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card__title, .card__text {
-  word-wrap: break-word;
-  text-align: center;
-}
-
-.modal__box__buttons-create, .modal__box__buttons-close {
-  background-color: black;
-  border: none;
-  color: black;
-  transition: 500ms background, 500ms color;
-}
-.modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
-}
 
 .footer {
-  grid-area: footer;
   background-color: #9AA0D9;
-  display: flex;
+  flex-wrap: wrap;
+  grid-area: footer;
   justify-content: space-between;
-  align-items: center;
   padding: 0 50px;
 }
 .footer__text {
-  font-size: 20px;
   font-weight: 500;
+  font-size: 20px;
 }
 .footer__img {
   width: 50px;
@@ -348,27 +354,36 @@ table {
   fill: #F5F5F5;
 }
 
-.modal__box__form, .modal__box, .modal, .main__cards {
+@media screen and (max-height: 375px) {
+  .footer__text {
+    word-break: break-word;
+    width: 200px;
+  }
+}
+.modal__box__form, .modal__box, .modal, .header, .main__settings, .main__settings > label, .main__cards, .card__options, .footer {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.card__title, .card__text {
-  word-wrap: break-word;
+.card__delete, .card__edit {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: #9AA0D9;
+  transition: 200ms background;
+  margin: 5px;
+}
+.card__delete:hover, .card__edit:hover {
+  background-color: #656fc2;
+}
+
+.card__type {
+  background: #9AA0D9;
+  border-radius: 20px;
+  color: white;
   text-align: center;
-}
-
-.modal__box__buttons-create, .modal__box__buttons-close {
-  background-color: black;
-  border: none;
-  color: black;
-  transition: 500ms background, 500ms color;
-}
-.modal__box__buttons-create:hover, .modal__box__buttons-close:hover {
-  background-color: white;
-  border: 2px solid black;
-  color: black;
+  font-size: 14px;
+  padding: 0 8px;
+  word-wrap: break-word;
 }
 
 .modal {

@@ -1,18 +1,16 @@
 @import '../abstracts/global';
 
 .header{
-  grid-area: header;
+  @extend %centeredItens;
   background-color: $mainColor;
-  padding: 0 50px;
-  display: flex;
-  align-items: center;
+  grid-area: header;
+  padding: $space50;
 
   &__title{
+    @include stylingText(96px);
     color: black;
-    font-size: 96px;
-    font-weight: 500;
     letter-spacing: .8px;
+    margin-left: 24px;
     text-decoration: none;
-    padding-left: 24px;
   }
 }
