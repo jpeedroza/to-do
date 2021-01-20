@@ -1,9 +1,8 @@
-const express = require('express');
-const router = express.Router();
+import express from "express";
+import Controller from "../controller/index.js";
 
-const Controller = require('../controller');
+const router = express.Router();
 const ControllerCard = new Controller;
-const Card = require('../models/cardSchema.model');
 
 router.route('/')
   .get( ControllerCard.getLandingPage );
@@ -19,4 +18,4 @@ router.route('/edit/:id')
 router.route('/delete/:id')
   .get( ControllerCard.deleteCard );
 
-module.exports = router;
+export default router;

@@ -1,8 +1,6 @@
-const express = require('express');
+import Card from '../models/cardSchema.model.js'
 
-const Card = require('../models/cardSchema.model');
-
-class ControllerCard{
+export default class ControllerCard{
 
   getLandingPage = async(req,res,next) => {
     try {
@@ -111,4 +109,3 @@ class ControllerCard{
   }
 }
 
-module.exports = ControllerCard;

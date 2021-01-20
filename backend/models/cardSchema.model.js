@@ -1,4 +1,4 @@
-const mongoose = require('../db');
+import mongoose from "../server/db.js";
 
 const Schema = new mongoose.Schema({
   title: {
@@ -21,4 +21,4 @@ const Schema = new mongoose.Schema({
 
 const Card = mongoose.model('Card', Schema);
 
-module.exports = Card;
+export default Card;
