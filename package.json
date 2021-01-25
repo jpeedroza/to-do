@@ -4,9 +4,7 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "start": "webpack serve --hot --compress --mode development",
-    "build": "webpack --mode production",
-    "dev": "node backend/server/app.js"
+    "start": "node backend/server/app.js"
   },
   "repository": {
     "type": "git",

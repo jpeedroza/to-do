@@ -146,6 +146,12 @@ table {
   height: 35px;
   padding-left: 35px;
 }
+.main__select {
+  width: 70px;
+  height: 41px;
+  font-size: 16px;
+  margin-left: -69px;
+}
 .main__img {
   width: 20px;
   height: 20px;

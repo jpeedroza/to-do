@@ -28,6 +28,11 @@
     @include areas(225px, 35px, true);
     padding-left: 35px;
   }
+  &__select{
+    @include areas(70px, 41px, true);
+    font-size: 16px;
+    margin-left: -69px;
+  }
 
   &__img{
     @include areas(20px, 20px, true);
