@@ -87,8 +87,6 @@ export default class ControllerCard{
         text: req.body.textInput
       }
       Card.findByIdAndUpdate(req.params.id, changes ,{new: true}, (err, doc) =>{
-        const error = JSON.stringify(err, null, 2)
-        console.log(error)
         if(err) throw new Error(err)
       })
       res.redirect('/')
