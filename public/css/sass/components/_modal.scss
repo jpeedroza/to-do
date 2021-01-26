@@ -5,43 +5,62 @@
   @extend %centeredItens;
   background-color: rgba($color: black, $alpha: 0.5);
   position: fixed;
+  top: 0;
+  left: 0;
   visibility: hidden;
+  justify-content: center;
 
   &__box{
     @include areas(500px, 400px, true);
+    flex-direction: column;
+    background-color: $baseColor;
+    border-radius: 10px
+  }
+
+  &__head{
     @extend %centeredItens;
     flex-direction: column;
-    background-color: black;
+    justify-content: center;
+    margin-top: 10px;
+  }
 
-    &__form{
-      @extend %centeredItens;
-      flex-direction: column;
-      padding-bottom: 20px;
+  &__confirm{
+    width: 80px;
+    height: 80px;
+    fill: $confirmColor;
+  }
 
-      &-label{
-        font-size: 20px;
-        font-weight: 500;
-      }
+  &__title{
+    font-size: 48px;
+  }
 
-      &-title,
-      &-text{
-        @include areas(200px, 25px, true);
-        margin: 5px;
-      }
+  &__body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 80px;
+  }
 
-      &-text{
-        height: 200px;
-        padding: 5px;
-        resize: none;
-      }
-    }
+  &__text{
+    font-size: 18px;
+    width: 300px;
+    text-align: center;
+  }
 
-    &__buttons{
+  &__redirect{
+    @include stylingText(18px);
+    background-color: $blackColor;
+    border-color: black;
+    border-radius: 3px;
+    color: $baseColor;
+    cursor: pointer;
+    transition: 500ms;
+    margin-top: 60px;
 
-      &-create,
-      &-close{
-        @include areas(80px, 25px, true);
-      }
+    &:hover{
+      background-color: $baseColor;
+      color: $blackColor;
     }
   }
 }

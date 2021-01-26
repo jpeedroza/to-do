@@ -21,7 +21,7 @@
     &__text{
       padding: 0;
       padding-left: 20px;
-      width: 640px;
+      width: 45vw;
 
       &::placeholder{
         font-family: roboto;
@@ -61,5 +61,16 @@
   &__alert{
     margin-top: 5px;
     color: red;
+  }
+}
+
+@media (max-width: 450px){
+  .header__title{
+    margin: 0 auto;
+  }
+  .mainCards__title,
+  .mainCards__type,
+  .mainCards__text{
+    width: 275px;
   }
 }

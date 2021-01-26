@@ -9,6 +9,7 @@ const Schema = new mongoose.Schema({
   },
   type:{
     type: String,
+    required: [true, 'Type Required'],
     trim: true,
     maxlength: [37, 'Max length is 37 characters']
   },

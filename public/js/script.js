@@ -5,6 +5,7 @@ const textCard = document.querySelectorAll('.card__text');
 const typeCard = document.querySelectorAll('.card__type');
 const selectBox = document.querySelector('select');
 
+
 let indexSelect;
 selectBox.addEventListener('blur', () =>{
     listCard.forEach(elem => elem.style.display = "inline")
@@ -58,3 +59,4 @@ searchBox.addEventListener('keyup', (event)=>{
       break;
   }
 })
+

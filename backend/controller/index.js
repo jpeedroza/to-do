@@ -1,6 +1,21 @@
+import { render } from 'ejs'
 import Card from '../models/cardSchema.model.js'
 
 export default class ControllerCard{
+  constructor(){
+    this.optionsCreatePage = {
+      pageContent: "Criação de Card",
+      cardContent: '',
+      actions: '/cards',
+      method: 'POST',
+      errorsHandler: {errors:{}}
+    }
+    this.optionsEditPage = (doc, req) => {
+      return{
+
+      }
+    }
+  }
 
   getLandingPage = async(req,res,next) => {
     try {
@@ -18,12 +33,7 @@ export default class ControllerCard{
 
   getCreateCardPage = (req,res,next) =>{
     try {
-      res.render('cards', {
-        pageContent: "Criação de Card",
-        cardContent: '',
-        actions: '/cards',
-        method: 'POST'
-      });
+      res.render('cards', this.optionsCreatePage);
     } catch (error) {
       res.status(404).end()
       console.log(error);
@@ -38,9 +48,10 @@ export default class ControllerCard{
         text: req.body.textInput
       });
       await addCard.save((err, document) =>{
-        const errors = this.getErrors(err);
-        if(errors == undefined) {
+        if(err === null){
           res.redirect('/')
+        } else {
+          res.render('cards', {...this.optionsCreatePage, errorsHandler: err});
         }
       })
     } catch (error) {
@@ -57,7 +68,8 @@ export default class ControllerCard{
             pageContent: "Edit de Card",
             cardContent: doc,
             actions: `/edit/${req.params.id}`,
-            method: 'POST'
+            method: 'POST',
+            errorsHandler: {errors:{}}
           })
         }
       })
@@ -75,6 +87,8 @@ export default class ControllerCard{
         text: req.body.textInput
       }
       Card.findByIdAndUpdate(req.params.id, changes ,{new: true}, (err, doc) =>{
+        const error = JSON.stringify(err, null, 2)
+        console.log(error)
         if(err) throw new Error(err)
       })
       res.redirect('/')
@@ -92,20 +106,6 @@ export default class ControllerCard{
       res.status(404).end();
       console.log(err)
     }
-  }
-
-  getErrors(err){
-    let errorArray = [];
-    if (err) {
-      if (err.errors['title']) {
-        console.log(err.errors['title'].message)
-        errorArray.push('title');
-      }
-      if (err.errors['text']) {
-        console.log(err.errors['text'].message)
-        errorArray.push('text');
-      }
-    };
   }
 
 }

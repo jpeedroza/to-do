@@ -7,20 +7,42 @@
       <label class="mainCards__label" for="titleInput">Titulo</label>
       <input class=" main__input mainCards__title" type="text" name="titleInput" placeholder="Digite aqui seu título"
         value="<%= cardContent.title %>">
-      <h1 class="mainCards__alert">Teste</h1>
+      <h1 class="mainCards__alert">
+        <%= errorsHandler.errors.title %>
+      </h1>
     </div>
     <div class="mainCards__form">
       <label class=" mainCards__label" for="typeInput">Tipo</label>
       <input class="main__input mainCards__type" type="type" name="titleInput" placeholder="Digite aqui seu tipo"
         value="<%= cardContent.type %>">
-      <h1 class="mainCards__alert">Teste</h1>
+      <h1 class="mainCards__alert">
+        <%= errorsHandler.errors.type %>
+      </h1>
     </div>
     <div class="mainCards__form">
       <label class="mainCards__label" for="titleInput">Texto</label>
       <textarea class="main__input mainCards__text" cols="30" rows="10" name="textInput"
         placeholder="Digite aqui seu Texto"><%= cardContent.text %></textarea>
-      <h1 class="mainCards__alert">Teste</h1>
+      <h1 class="mainCards__alert">
+        <%= errorsHandler.errors.text %>
+      </h1>
     </div>
-    <button class="mainCards__submit" type="submit">Adicionar</button>
+    <input type="button" value="Adicionar" class="mainCards__submit"></input>
+    <div class="modal">
+      <div class="modal__box">
+        <div class="modal__head">
+          <svg class="modal__confirm" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0V0zm0 0h24v24H0V0z" fill="none" />
+            <path
+              d="M16.59 7.58L10 14.17l-3.59-3.58L5 12l5 5 8-8zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+          </svg>
+          <h2 class="modal__title">Sucesso!</h2>
+        </div>
+        <div class="modal__body">
+          <p class="modal__text">O cartão foi salvo, redirecione a página para visualização.</p>
+          <button class="modal__redirect" type="submit">Ir para a página principal</button>
+        </div>
+      </div>
+    </div>
   </form>
 </main>
